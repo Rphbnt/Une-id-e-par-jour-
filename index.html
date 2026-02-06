@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Une idée par jour 💡</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.container{
+    max-width:500px;
+    padding:30px;
+    background:rgba(0,0,0,0.4);
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+#idea{
+    font-size:1.2em;
+    margin:25px 0;
+    min-height:60px;
+}
+
+button{
+    background:#00c6ff;
+    border:none;
+    padding:12px 20px;
+    font-size:1em;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00a0d6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💡 Une idée par jour</h1>
+    <div id="idea">Clique pour générer une idée</div>
+    <button onclick="newIdea()">Nouvelle idée 🔄</button>
+</div>
+
+<script>
+const ideas = [
+    "Créer un site ultra simple qui résout un seul problème",
+    "Faire un mini outil gratuit pour attirer du trafic",
+    "Apprendre une compétence précise pendant 30 jours",
+    "Automatiser une tâche que tu fais chaque jour",
+    "Créer un site avec une seule page mais très stylée",
+    "Partager ce que tu apprends en public",
+    "Créer un générateur aléatoire fun",
+    "Faire un projet web inutile mais drôle",
+    "Simplifier un truc compliqué pour les autres",
+    "Créer un site que tu aurais aimé trouver"
+];
+
+function newIdea(){
+    const random = Math.floor(Math.random() * ideas.length);
+    document.getElementById("idea").textContent = ideas[random];
+}
+
+// idée affichée au chargement
+newIdea();
+</script>
+
+</body>
+</html>
